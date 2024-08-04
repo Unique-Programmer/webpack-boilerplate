@@ -1,0 +1,1 @@
+Another way for working with latest css-loader for modules
