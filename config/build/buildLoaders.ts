@@ -5,8 +5,17 @@ import { BuildOptions } from './types';
 export function buildLoaders({ mode }: BuildOptions): ModuleOptions['rules'] {
     const isDev = mode === 'development';
 
+    const cssLoaderWithModules = {
+        loader: 'css-loader',
+        options: {
+            modules: {
+                localIdentName: isDev ? '[path][name]__[local]' : '[hash:base64:8]',
+            },
+        },
+    };
+
     const scssLoader = {
-        test: /\.css$/i,
+        test: /\.s[ac]ss$/i,
         /* order important here - processing order for installed packs,
         can be provide one or array of loaders */
         use: [
@@ -14,11 +23,11 @@ export function buildLoaders({ mode }: BuildOptions): ModuleOptions['rules'] {
             // "style-loader",
 
             // MiniCssExtractPlugin for extracting css in own files (!recommended)
-            isDev ? "style-loader" : MiniCssExtractPlugin.loader,
+            isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
             // Translates CSS into CommonJS
-            "css-loader",
+            cssLoaderWithModules,
             // Compiles Sass to CSS
-            "sass-loader",
+            'sass-loader',
         ],
     };
 
