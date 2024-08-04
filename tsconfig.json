@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    // "module": "ESNext" for using standart "import()" word
+    "module": "ESNext",
+    "target": "es5",
+    // "jsx": "react-jsx" for using without 
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "moduleResolution": "node",
+    /* "allowSyntheticDefaultImports": true and "esModuleInterop": true for using
+    without " as *" imports without default export */
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
