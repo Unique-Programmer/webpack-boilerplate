@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack serve --env port=4000 mode=development",
     "build:dev": "webpack --env mode=development",
-    "build:prod": "webpack --env mode=production"
+    "build:prod": "webpack --env mode=production",
+    "build:analyzer": "webpack --env analizer=true mode=production"
   },
   "repository": {
     "type": "git",
@@ -37,8 +38,11 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
+    "@types/webpack-bundle-analyzer": "^4.7.0",
     "mini-css-extract-plugin": "^2.7.6",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.16.0",
+    "webpack-bundle-analyzer": "^4.9.1"
   }
 }

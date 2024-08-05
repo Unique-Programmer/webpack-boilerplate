@@ -13,6 +13,11 @@
     without " as *" imports without default export */
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    // aliases config
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "ts-node": {
     "compilerOptions": {

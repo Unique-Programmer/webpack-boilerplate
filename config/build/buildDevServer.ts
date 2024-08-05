@@ -7,5 +7,7 @@ export function buildDevServer({ port }: BuildOptions): DevServerConfiguration {
         // --env port setted in start script package.json
         port: port,
         open: true,
+        // if it will be get from nginx, need proxy to index.html
+        historyApiFallback: true,
     }
 }
